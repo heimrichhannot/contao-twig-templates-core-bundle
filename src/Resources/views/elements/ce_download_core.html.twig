@@ -1,0 +1,7 @@
+{% extends '@HeimrichHannotTwigTemplatesCore/block/block_searchable_core.html.twig' %}
+
+{% block content %}
+    <p class="download-element ext-{{ extension|default }}">
+        <a href="{{ href }}" title="{{ title }}" type="{{ mime }}">{{ link|raw }} <span class="size">({{ filesize }})</span></a>
+    </p>
+{% endblock %}
