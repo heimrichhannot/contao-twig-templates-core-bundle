@@ -1,0 +1,22 @@
+{
+  "name": "heimrichhannot/contao-twig-templates-core-bundle",
+  "type": "contao-bundle",
+  "description": "Brings contao core templates to twig templates bundle",
+  "license": "LGPL-3.0-or-later",
+  "require": {
+    "php": "^7.2",
+    "contao/core-bundle": "^4.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "HeimrichHannot\\TwigTemplatesCoreBundle\\": "src/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "extra": {
+    "contao-manager-plugin": "HeimrichHannot\\TwigTemplatesCoreBundle\\ContaoManager\\Plugin",
+    "foxy": true
+  }
+}
