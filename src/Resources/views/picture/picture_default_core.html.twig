@@ -1,0 +1,26 @@
+{% if sources|default %}
+<picture>
+    {% for source in sources %}
+    <source srcset="{{ source.srcset }}"
+        {%- if source.sizes|default %} sizes="{{ source.sizes }}"{% endif -%}
+        {%- if source.media|default %} media="{{ source.media }}"{% endif -%}
+        {%- if source.type|default %} type="{{ source.type }}"{% endif -%}
+        {%- if source.width|default and source.height|default %} width="{{ source.width }}" height="{{ source.height }}"{% endif -%}
+    >
+    {% endfor %}
+{% endif %}
+
+    <img src="{{ img.src }}"
+        {%- if img.srcset != img.src %} srcset="{{ img.srcset }}"{% endif -%}
+        {%- if img.sizes|default %} sizes="{{ img.sizes }}"{% endif -%}
+        {%- if img.width|default and img.height|default %} width="{{ img.width }}" height="{{ img.height }}"{% endif -%}
+         alt="{{ alt|default }}"
+        {%- if img.loading|default %} loading="{{ img.loading }}"{% endif -%}
+        {%- if title|default %} title="{{ title }}"{% endif -%}
+
+        {%- if class|default or img.class|default %} class="{{ class|default ~ ' ' ~ img.class|default ~ ''|trim }}"{% endif -%}
+        {{- attributes|default }} itemprop="image">
+
+{% if sources|default %}
+</picture>
+{% endif %}
